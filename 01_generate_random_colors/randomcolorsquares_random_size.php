@@ -1,24 +1,29 @@
   <?php
+  /* Generate random color in the form of #
+     eg -> #ffffff    (white color)
+           #ff5555    (tomato color)
+           #aabbccdd  (skyblue color)
+           #5265dd     (dodgerblue color)
+  */
   function generate_random_color($length = 6) {
     return '#' . substr(str_shuffle("0123456789abcdef"), 0, $length) . ';';
   }
 
+  /* Returns only one number between 0.1 (include) and 1 (include)*/
   function generate_random_grid_size() {
     $grid = array('0.1', '0.2', '0.3', '0.4', '0.5','0.6','0.7','0.8','0.9','1');
     return $grid[rand(0, 9)];
   }
-
   ?>
-
   <!DOCTYPE html>
   <html>
     <head>
       <meta charset="UTF-8">
       <title>Random Colors</title>
-    	<style type="text/css">
+      <style type="text/css">
       body {
-      	margin: 0;
-      	padding: 0;
+        margin: 0;
+        padding: 0;
         cursor: pointer;
         background: <?php echo generate_random_color(); ?>;
       }
@@ -60,7 +65,7 @@
         }
       }
 
-    	</style>
+      </style>
     </head>
     <body>
       <main>
